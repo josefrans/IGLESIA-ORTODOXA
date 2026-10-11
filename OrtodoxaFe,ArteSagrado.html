@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGLESIA ORTODOXA FE,ICONOGRAFÍA SAGRADA & TEOLOGÍA ORTODOXA</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700;900&family=Marcellus&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sacred: {
+                            wood: '#0C0806',
+                            deepwood: '#070403',
+                            oak: '#18110D',
+                            panel: '#1E1611',
+                            gold: '#C8A051',
+                            oldgold: '#8C6C2D',
+                            lightgold: '#E8D5A3',
+                            bronze: '#A37238',
+                            crimson: '#520B13',
+                            cream: '#F2E8DC',
+                            mutedcream: '#C7BBAE'
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        cinzeldec: ['Cinzel Decorative', 'serif'],
+                        marcellus: ['Marcellus', 'serif'],
+                        newsreader: ['Newsreader', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #070403;
+            color: #F2E8DC;
+            font-family: 'Newsreader', serif;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(200, 160, 81, 0.08) 0%, transparent 70%),
+                radial-gradient(circle at 50% 100%, rgba(82, 11, 19, 0.15) 0%, transparent 60%);
+        }
+
+        /* Wood Grain / Sacral Texture Overlay */
+        .wood-texture {
+            background-color: #0c0806;
+            background-image: radial-gradient(rgba(200, 160, 81, 0.05) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+
+        /* Gold Foil Borders */
+        .gold-border-antique {
+            border: 1px solid rgba(200, 160, 81, 0.35);
+            box-shadow: inset 0 0 15px rgba(200, 160, 81, 0.05), 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .gold-border-glow {
+            border: 1px solid #C8A051;
+            box-shadow: 0 0 25px rgba(200, 160, 81, 0.25), inset 0 0 10px rgba(200, 160, 81, 0.15);
+        }
+
+        /* Gradient Gold Typography */
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #FFF2D1 0%, #C8A051 45%, #8C6C2D 85%, #E8D5A3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Antique Gold Button */
+        .gold-btn {
+            background: linear-gradient(135deg, #C8A051 0%, #8C6C2D 100%);
+            color: #070403;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gold-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(30deg) translateY(-100%);
+            transition: transform 0.8s ease;
+        }
+
+        .gold-btn:hover::after {
+            transform: rotate(30deg) translateY(100%);
+        }
+
+        .gold-btn:hover {
+            box-shadow: 0 0 25px rgba(200, 160, 81, 0.5);
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #E8D5A3 0%, #C8A051 100%);
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070403;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8C6C2D;
+            border-radius: 2px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C8A051;
+        }
+
+        /* Realistic Candle Flame Animation */
+        .candle-flame {
+            width: 12px;
+            height: 24px;
+            background: linear-gradient(to top, #ff3300, #ff9900 40%, #ffffaa 80%, #ffffff 100%);
+            border-radius: 50% 50% 35% 35%;
+            filter: drop-shadow(0 0 8px #ff7700) drop-shadow(0 0 20px #ff3300);
+            animation: flameFlicker 1.5s infinite alternate ease-in-out;
+            transform-origin: center bottom;
+        }
+
+        @keyframes flameFlicker {
+            0% { transform: scale(1) rotate(-1.5deg); opacity: 0.95; }
+            25% { transform: scale(1.05, 0.95) rotate(1deg); opacity: 1; }
+            50% { transform: scale(0.98, 1.08) rotate(-1deg); opacity: 0.9; }
+            75% { transform: scale(1.03, 0.97) rotate(2deg); opacity: 0.98; }
+            100% { transform: scale(0.95, 1.02) rotate(-0.5deg); opacity: 0.92; }
+        }
+
+        .candle-glow {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255, 150, 0, 0.3) 0%, transparent 70%);
+            top: -40px;
+            left: -44px;
+            pointer-events: none;
+            animation: pulseGlow 2s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulseGlow {
+            0% { opacity: 0.6; transform: scale(0.9); }
+            100% { opacity: 0.95; transform: scale(1.1); }
+        }
+
+        .panel-glass {
+            background: rgba(24, 17, 13, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        /* Custom Icon Magnifier effect */
+        .icon-zoom-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .icon-zoom-img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .icon-zoom-container:hover .icon-zoom-img {
+            transform: scale(1.12);
+        }
+    </style>
+</head>
+<body class="wood-texture min-h-screen flex flex-col justify-between selection:bg-sacred-gold selection:text-sacred-deepwood">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 panel-glass border-b border-sacred-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
+            <!-- Brand / Logo -->
+            <a href="#" class="flex items-center space-x-3.5 group">
+                <svg class="w-9 h-11 text-sacred-gold transition-transform group-hover:scale-105 duration-300" viewBox="0 0 100 120" fill="currentColor">
+                    <!-- Orthodox 8-pointed Cross -->
+                    <rect x="46" y="8" width="8" height="104" fill="currentColor"/>
+                    <rect x="22" y="24" width="56" height="7" fill="currentColor"/>
+                    <rect x="32" y="46" width="36" height="6" fill="currentColor"/>
+                    <line x1="26" y1="96" x2="74" y2="80" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+                <div class="flex flex-col">
+                    <span class="font-cinzel text-base sm:text-lg font-bold tracking-widest gold-text-gradient uppercase leading-tight">Iglesia Ortodoxa</span>
+                    <span class="font-marcellus text-[10px] sm:text-xs tracking-[0.25em] text-sacred-gold/70 uppercase">ICONOGRAFÍA SAGRADA & TEOLOGÍA ORTODOXA</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8 font-cinzel text-xs tracking-widest uppercase text-sacred-cream/80">
+                <a href="#historia" class="hover:text-sacred-gold transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sacred-gold hover:after:w-full after:transition-all">Teología</a>
+                <a href="#iconografia" class="hover:text-sacred-gold transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sacred-gold hover:after:w-full after:transition-all">Iconografía</a>
+                <a href="#simbologia" class="hover:text-sacred-gold transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sacred-gold hover:after:w-full after:transition-all">Simbología</a>
+                <a href="#zvonnitsa" class="hover:text-sacred-gold transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sacred-gold hover:after:w-full after:transition-all">Zvonnitsa</a>
+                <a href="#velas" class="hover:text-sacred-gold transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sacred-gold hover:after:w-full after:transition-all">Velas Virtuales</a>
+            </nav>
+
+
+
+
+            <!-- Quick Audio Synth onclick="toggleGlobalAudio()"  Controller xoce -->
+            <button id="miBoton"  id="quickAudioBtn" class="px-4 py-2 rounded border border-sacred-gold/40 text-sacred-gold hover:bg-sacred-gold hover:text-sacred-deepwood transition-all flex items-center space-x-2 text-xs font-cinzel tracking-wider">
+                <i class="fa-solid fa-volume-high"  id="quickAudioIcon"></i>
+                <span id="quickAudioLabel">Cántico Bajo Basso Profundo</span>
+            </button>
+
+
+
+
+
+
+
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-28 px-4 sm:px-6 lg:px-8 min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Cathedral SVG Domes Silhouette -->
+        <div class="absolute inset-0 z-0 flex items-center justify-center opacity-15 pointer-events-none">
+            <svg class="w-full max-w-5xl h-auto text-sacred-gold" viewBox="0 0 1000 600" fill="currentColor">
+                <!-- Center Dome -->
+                <path d="M500,50 C480,100 420,130 420,220 C420,290 455,320 500,350 C545,320 580,290 580,220 C580,130 520,100 500,50 Z"/>
+                <rect x="492" y="10" width="16" height="40" fill="currentColor"/>
+                <rect x="480" y="20" width="40" height="6" fill="currentColor"/>
+                <!-- Left Domes -->
+                <path d="M300,150 C285,190 240,210 240,280 C240,330 270,350 300,380 C330,350 360,330 360,280 C360,210 315,190 300,150 Z"/>
+                <rect x="295" y="120" width="10" height="30" fill="currentColor"/>
+                <rect x="286" y="128" width="28" height="4" fill="currentColor"/>
+                <!-- Right Domes -->
+                <path d="M700,150 C685,190 640,210 640,280 C640,330 670,350 700,380 C730,350 760,330 760,280 C760,210 715,190 700,150 Z"/>
+                <rect x="695" y="120" width="10" height="30" fill="currentColor"/>
+                <rect x="686" y="128" width="28" height="4" fill="currentColor"/>
+                <!-- Base Structure Lines -->
+                <rect x="180" y="380" width="640" height="200" fill="currentColor"/>
+            </svg>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-8">
+            <div class="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-sacred-gold/30 bg-sacred-panel/80 text-sacred-gold text-xs font-cinzel tracking-widest uppercase">
+                <i class="fa-solid fa-cross text-sacred-gold text-xs"></i>
+                <span>Trascendencia · Sacralidad · Invariable Santidad</span>
+            </div>
+
+            <h1 class="font-cinzeldec text-4xl sm:text-6xl md:text-7xl font-bold tracking-wider gold-text-gradient leading-tight">
+                La Ventana hacia la Eternidad
+            </h1>
+
+            <p class="font-newsreader text-xl sm:text-2xl text-sacred-cream/90 max-w-3xl mx-auto leading-relaxed font-light italic">
+                «El icono es la teología expresada en color y luz.
+                 No representa la apariencia exterior de la materia mortal, sino la creación transfigurada por la Gracia Increada.» 
+                <span class="block text-sm font-marcellus text-sacred-gold/80 not-italic mt-3 tracking-widest uppercase">          </span>
+            </p>
+
+
+
+
+
+
+            <!-- Basso Profundo Vocal Synthesizer Card -->
+            <div class="panel-glass p-6 sm:p-8 rounded-xl gold-border-antique max-w-2xl mx-auto mt-10">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div class="text-left space-y-1">
+                        <span class="font-cinzel text-xs text-sacred-gold/70 tracking-widest uppercase block">Sintetizador Coral Cántico</span>
+                        <h3 class="font-cinzel text-lg font-bold text-sacred-cream" id="bassoTrackTitle">Basso Profundo (Oktavist)</h3>
+                        <p class="text-xs text-sacred-mutedcream font-newsreader">coros monásticos.</p>
+                    </div>
+
+                    <div class="flex items-center space-x-3 shrink-0">
+
+
+
+
+                        <button  onclick="playBassoDrone()"  id="heroPlayBtn" class="gold-btn px-6 py-3 rounded text-xs flex items-center space-x-2">
+                            <i class="fa-solid fa-play" id="heroPlayIcon"></i>
+                            <span id="heroPlayText">Invocar Cántico</span>
+                        </button>
+
+
+
+
+                        <button onclick="stopAllAudio()" class="p-3 rounded border border-sacred-gold/30 text-sacred-gold hover:bg-sacred-crimson/40 transition">
+                            <i class="fa-solid fa-power-off"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 flex justify-center space-x-4">
+                <a href="#iconografia" class="gold-btn px-8 py-3.5 rounded text-xs uppercase tracking-widest inline-block">
+                    Explorar Galería de Iconos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Theology & Spiritual Pillars -->
+    <section id="historia" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-sacred-gold/15">
+        <div class="text-center mb-16 space-y-3">
+            <span class="font-marcellus text-xs tracking-[0.3em] text-sacred-gold uppercase">La Experiencia Hesicasta</span>
+            <h2 class="font-cinzel text-3xl sm:text-5xl gold-text-gradient">Fundamentos de la Ortodoxia</h2>
+            <div class="w-20 h-0.5 bg-sacred-gold mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Pillar 1 -->
+            <div class="panel-glass p-8 rounded-lg gold-border-antique hover:border-sacred-gold transition-all duration-300 group">
+                <div class="w-14 h-14 rounded-full bg-sacred-oak border border-sacred-gold/40 flex items-center justify-center text-sacred-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <h3 class="font-cinzel text-xl text-sacred-gold font-bold mb-3">La Teosis (Divinización)</h3>
+                <p class="text-sacred-mutedcream text-sm leading-relaxed font-newsreader">
+                    La salvación en la teología ortodoxa no es solo un perdón jurídico, sino un proceso de transformación ontológica mediante el cual el ser humano participa de la naturaleza divina por la gracia no creada.
+                </p>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="panel-glass p-8 rounded-lg gold-border-antique hover:border-sacred-gold transition-all duration-300 group">
+                <div class="w-14 h-14 rounded-full bg-sacred-oak border border-sacred-gold/40 flex items-center justify-center text-sacred-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-scroll"></i>
+                </div>
+                <h3 class="font-cinzel text-xl text-sacred-gold font-bold mb-3">Hesicasmo y Quietud</h3>
+                <p class="text-sacred-mutedcream text-sm leading-relaxed font-newsreader">
+                    Práctica espiritual contemplativa basada en la sobriedad (*nepsis*) y la repetición constante de la Oración de Jesús: <em>«Señor Jesucristo, Hijo de Dios, ten piedad de mí, pecador»</em>.
+                </p>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="panel-glass p-8 rounded-lg gold-border-antique hover:border-sacred-gold transition-all duration-300 group">
+                <div class="w-14 h-14 rounded-full bg-sacred-oak border border-sacred-gold/40 flex items-center justify-center text-sacred-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-church"></i>
+                </div>
+                <h3 class="font-cinzel text-xl text-sacred-gold font-bold mb-3">El Iconostasio Sagrado</h3>
+                <p class="text-sacred-mutedcream text-sm leading-relaxed font-newsreader">
+                    La muralla revestida de iconos que une el Santo de los Santos con la nave. Lejos de ocultar, el iconostasio revela el misterio de la encarnación y la comunión con los santos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Interactive Iconography Viewer -->
+    <section id="iconografia" class="py-24 px-4 sm:px-6 lg:px-8 bg-sacred-oak/60 border-t border-sacred-gold/15">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 space-y-3">
+                <span class="font-marcellus text-xs tracking-[0.3em] text-sacred-gold uppercase">Arte Sacro y Teología en Color</span>
+                <h2 class="font-cinzel text-3xl sm:text-5xl gold-text-gradient">Visor de Iconografía</h2>
+                <p class="font-newsreader text-sacred-cream/80 max-w-2xl mx-auto text-base">
+                    Haz clic en los iconos para analizarlos con la lupa de detalles y descubrir la mística de sus proporciones y colores.
+                </p>
+            </div>
+
+            <!-- Detailed Icon Gallery with Zoom and Description Switcher -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+
+
+
+                <!-- Icon Selection Column -->
+                <div class="lg:col-span-5 space-y-4">
+
+
+
+                    <!-- Icon Card 1 -->
+                    <div onclick="selectIcon('trinity')" id="card-trinity" class="panel-glass p-4 rounded-lg gold-border-glow cursor-pointer transition-all flex items-center space-x-4 border-l-4 border-l-sacred-gold">
+                        <div class="w-16 h-20 bg-sacred-deepwood border border-sacred-gold/40 rounded flex items-center justify-center shrink-0">
+                           <img src="trinity-rublev.jpg"> <!--- <i class="fa-solid fa-users text-sacred-gold text-2xl"></i> -->
+                        </div>
+                        <div>
+
+
+
+
+                            <h4 class="font-cinzel font-bold text-sacred-gold text-base">La Trinidad de Rublev</h4>
+                            <span class="text-xs font-newsreader italic text-sacred-mutedcream block">San Andréi Rublev (c. 1411)</span>
+                            <span class="text-[11px] text-sacred-gold/80 mt-1 block">Comunión Eucarística Divina</span>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <!-- Icon Card 2 -->
+                    <div onclick="selectIcon('vladimir')" id="card-vladimir" class="panel-glass p-4 rounded-lg gold-border-antique cursor-pointer transition-all flex items-center space-x-4 hover:border-sacred-gold">
+                        <div class="w-16 h-20 bg-sacred-deepwood border border-sacred-gold/40 rounded flex items-center justify-center shrink-0">
+                             <img src="VirgendeVladímir.jpg"> <!--<i class="fa-solid fa-heart text-sacred-gold text-2xl"></i>-->
+                        </div>
+                        <div>
+                            <h4 class="font-cinzel font-bold text-sacred-gold text-base">Virgen de Vladímir (Eleusa)</h4>
+                            <span class="text-xs font-newsreader italic text-sacred-mutedcream block">Icono de la Tendencia Maternal</span>
+                            <span class="text-[11px] text-sacred-gold/80 mt-1 block">Ternura Divina y Profecía</span>
+                        </div>
+                    </div>
+
+                    <!-- Icon Card 3 -->
+                    <div onclick="selectIcon('pantocrator')" id="card-pantocrator" class="panel-glass p-4 rounded-lg gold-border-antique cursor-pointer transition-all flex items-center space-x-4 hover:border-sacred-gold">
+                        <div class="w-16 h-20 bg-sacred-deepwood border border-sacred-gold/40 rounded flex items-center justify-center shrink-0">
+                            
+                            <img src="CristoPantocrator.jpg"> <!--<i class="fa-solid fa-crown text-sacred-gold text-2xl"></i>-->
+                        </div>
+                        <div>
+                            <h4 class="font-cinzel font-bold text-sacred-gold text-base">Cristo Pantocrátor</h4>
+                            <span class="text-xs font-newsreader italic text-sacred-mutedcream block">El Señor del Universo</span>
+                            <span class="text-[11px] text-sacred-gold/80 mt-1 block">Misericordia y Juicio Soberano</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <!-- Interactive Viewer Display Pane -->
+                <div class="lg:col-span-7 panel-glass p-8 rounded-xl gold-border-antique space-y-6">
+                    <div class="flex items-center justify-between border-b border-sacred-gold/20 pb-4">
+                        <div>
+                            <h3 id="activeIconTitle" class="font-cinzel text-2xl font-bold text-sacred-gold">La Santísima Trinidad</h3>
+                            <span id="activeIconSub" class="text-xs font-marcellus text-sacred-cream/70 tracking-widest uppercase">San Andréi Rublev</span>
+                        </div>
+                        <span class="text-xs font-cinzel text-sacred-gold bg-sacred-oak px-3 py-1 border border-sacred-gold/30 rounded">Análisis Canónico</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <!-- Icon SVG Rendering Panel -->
+                        <div class="icon-zoom-container bg-sacred-deepwood rounded-lg border border-sacred-gold/30 p-6 flex flex-col items-center justify-center min-h-[260px] relative">
+                            <div id="iconVisualCanvas" class="text-center space-y-3">
+
+                                <!-- Dynamic Icon SVG Representation -->
+
+                                <img src="angel.jpg">
+                               <!-- <svg class="w-32 h-32 text-sacred-gold mx-auto" viewBox="0 0 100 100" fill="currentColor">
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M30,70 L50,30 L70,70 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="50" cy="40" r="10" fill="currentColor"/>
+                                    <circle cx="35" cy="65" r="8" fill="currentColor"/>
+                                    <circle cx="65" cy="65" r="8" fill="currentColor"/>
+                                </svg> --->
+                                <span class="text-xs font-cinzel text-sacred-gold/70 block">Pasa el cursor para ampliar detalle</span>
+                            </div>
+                        </div>
+
+                        <!-- Icon Theological Breakdown -->
+                        <div class="space-y-4">
+                            <h5 class="font-cinzel text-xs text-sacred-gold tracking-widest uppercase">Exégesis:</h5>
+                            <p id="activeIconDesc" class="font-newsreader text-sm text-sacred-cream/90 leading-relaxed">
+                                Tres ángeles de idéntica figura sentados a la mesa eucarística formando un círculo perfecto. La inclinación de sus cabezas demuestra el diálogo eterno de amor e hipóstasis sin jerarquía.
+                            </p>
+                            <div class="border-t border-sacred-gold/20 pt-3">
+                                <h5 class="font-cinzel text-xs text-sacred-gold tracking-widest uppercase mb-1">Cáliz Eucarístico:</h5>
+                                <p id="activeIconCaliz" class="font-newsreader text-xs text-sacred-mutedcream">
+                                    En el centro de la mesa reposa la copa del sacrificio, símbolo del Cordero de Dios.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Color Theology Panel -->
+            <div id="simbologia" class="mt-16 panel-glass p-8 rounded-xl gold-border-antique">
+                <h3 class="font-cinzel text-xl text-sacred-gold font-bold mb-6 text-center">Simbología Mística de los Colores Sagrados</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="p-4 bg-sacred-deepwood rounded border border-sacred-gold/20 text-center space-y-2">
+                        <div class="w-8 h-8 rounded-full bg-sacred-gold mx-auto border border-sacred-cream/30"></div>
+                        <h4 class="font-cinzel text-sm text-sacred-gold font-bold">Dorado / Pan de Oro</h4>
+                        <p class="font-newsreader text-xs text-sacred-mutedcream">La Luz Increada de Dios, la Eternidad y el Reino Celestial sin sombras.</p>
+                    </div>
+
+                    <div class="p-4 bg-sacred-deepwood rounded border border-blue-900/50 text-center space-y-2">
+                        <div class="w-8 h-8 rounded-full bg-blue-900 mx-auto border border-sacred-cream/30"></div>
+                        <h4 class="font-cinzel text-sm text-sacred-gold font-bold">Azul Cobalto</h4>
+                        <p class="font-newsreader text-xs text-sacred-mutedcream">El Misterio de la Naturaleza Divina, la Trascendencia y el Espíritu Santo.</p>
+                    </div>
+
+                    <div class="p-4 bg-sacred-deepwood rounded border border-sacred-crimson/50 text-center space-y-2">
+                        <div class="w-8 h-8 rounded-full bg-sacred-crimson mx-auto border border-sacred-cream/30"></div>
+                        <h4 class="font-cinzel text-sm text-sacred-gold font-bold">Rojo / Púrpura</h4>
+                        <p class="font-newsreader text-xs text-sacred-mutedcream">La Humanidad de Cristo, el Sacrificio Martirial y la Realeza Divina.</p>
+                    </div>
+
+                    <div class="p-4 bg-sacred-deepwood rounded border border-emerald-900/50 text-center space-y-2">
+                        <div class="w-8 h-8 rounded-full bg-emerald-900 mx-auto border border-sacred-cream/30"></div>
+                        <h4 class="font-cinzel text-sm text-sacred-gold font-bold">Verde Malaquita</h4>
+                        <p class="font-newsreader text-xs text-sacred-mutedcream">La Renovación de la Creación, la Vida en el Espíritu y la Esperanza.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Zvonnitsa Russian Bell Tower Simulator -->
+    <section id="zvonnitsa" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-sacred-gold/15">
+        <div class="text-center mb-16 space-y-3">
+            <span class="font-marcellus text-xs tracking-[0.3em] text-sacred-gold uppercase">Instrumental Campanario</span>
+            <h2 class="font-cinzel text-3xl sm:text-5xl gold-text-gradient">Simulador de Zvonnitsa</h2>
+            <p class="font-newsreader text-sacred-cream/80 max-w-2xl mx-auto text-base">
+                Las campanas no son afinadas melódicamente, sino que producen tonos ricos en armónicos disonantes diseñados para despertar el alma.
+            </p>
+        </div>
+
+        <div class="panel-glass p-8 rounded-2xl gold-border-antique text-center max-w-4xl mx-auto">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
+                <!-- Bell 1: Zvin Small -->
+                <button onclick="ringZvonnitsaBell('zvin', 1046)" class="p-6 bg-sacred-deepwood rounded-xl border border-sacred-gold/30 hover:border-sacred-gold hover:bg-sacred-gold/10 transition group flex flex-col items-center">
+                    <i class="fa-solid fa-bell text-sacred-gold text-3xl mb-3 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-cinzel text-xs font-bold text-sacred-gold block">Zvin (Agudo)</span>
+                    <span class="text-[10px] text-sacred-mutedcream font-newsreader"> Campanilla</span>
+                </button>
+
+                <!-- Bell 2: Podzvonny -->
+                <button onclick="ringZvonnitsaBell('podzvonny', 523)" class="p-6 bg-sacred-deepwood rounded-xl border border-sacred-gold/30 hover:border-sacred-gold hover:bg-sacred-gold/10 transition group flex flex-col items-center">
+                    <i class="fa-solid fa-bell text-sacred-gold text-4xl mb-3 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-cinzel text-xs font-bold text-sacred-gold block">Podzvonny</span>
+                    <span class="text-[10px] text-sacred-mutedcream font-newsreader"> Armónico Medio</span>
+                </button>
+
+                <!-- Bell 3: Blagovest -->
+                <button onclick="ringZvonnitsaBell('blagovest', 220)" class="p-6 bg-sacred-deepwood rounded-xl border border-sacred-gold/30 hover:border-sacred-gold hover:bg-sacred-gold/10 transition group flex flex-col items-center">
+                    <i class="fa-solid fa-bell text-sacred-gold text-5xl mb-3 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-cinzel text-xs font-bold text-sacred-gold block">Blagovest</span>
+                    <span class="text-[10px] text-sacred-mutedcream font-newsreader"> Anunciadora</span>
+                </button>
+
+                <!-- Bell 4: Great Tsar Bell -->
+                <button onclick="ringZvonnitsaBell('tsar', 87)" class="p-6 bg-sacred-deepwood rounded-xl border border-sacred-gold/30 hover:border-sacred-gold hover:bg-sacred-gold/10 transition group flex flex-col items-center">
+                    <i class="fa-solid fa-bell text-sacred-gold text-6xl mb-3 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-cinzel text-xs font-bold text-sacred-gold block">Tsar-Kolokol</span>
+                    <span class="text-[10px] text-sacred-mutedcream font-newsreader"> Bajo Catedralicio</span>
+                </button>
+            </div>
+
+            <!-- Polyphonic Sequence Trigger -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button onclick="triggerFestivePeal()" class="gold-btn px-8 py-3.5 rounded text-xs uppercase tracking-widest w-full sm:w-auto">
+                    <i class="fa-solid fa-campground mr-2"></i> Tocar Repique Festivo Pascual
+                </button>
+                <span id="zvonnitsaStatus" class="text-xs font-cinzel text-sacred-gold">Estado: Listo</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Virtual Candle Shrine with Petitions -->
+    <section id="velas" class="py-24 px-4 sm:px-6 lg:px-8 bg-sacred-oak/60 border-t border-sacred-gold/15">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            <div class="space-y-3">
+                <span class="font-marcellus text-xs tracking-[0.3em] text-sacred-gold uppercase">Devoción y Peticiones</span>
+                <h2 class="font-cinzel text-3xl sm:text-5xl gold-text-gradient">Altar de Velas Virtuales</h2>
+                <p class="font-newsreader text-sacred-cream/80 max-w-2xl mx-auto text-base">
+                    Enciende una vela ante el altar y deja tu intención de oración. Tu luz permanecerá ardiendo en esta capilla digital.
+                </p>
+            </div>
+
+            <div class="panel-glass p-8 sm:p-12 rounded-2xl gold-border-glow relative">
+                <!-- Interactive Candle Visual -->
+                <div class="flex justify-center items-end min-h-[160px] mb-8 relative">
+                    <div id="candleVisualContainer" class="relative flex flex-col items-center">
+                        <!-- Flame (Initially Hidden) -->
+                        <div id="flameElement" class="candle-flame opacity-0 transition-opacity duration-700 relative">
+                            <div class="candle-glow"></div>
+                        </div>
+                        <!-- Wick -->
+                        <div class="w-0.5 h-3 bg-neutral-800"></div>
+                        <!-- Wax Body -->
+                        <div class="w-7 h-36 bg-gradient-to-r from-amber-100 via-amber-200 to-amber-300 rounded-t-sm shadow-inner border-t border-amber-300/60"></div>
+                        <!-- Candlestick Base -->
+                        <div class="w-24 h-5 bg-gradient-to-r from-amber-800 via-sacred-gold to-amber-900 rounded-b-xl border-t border-sacred-gold/50 shadow-2xl"></div>
+                    </div>
+                </div>
+
+                <!-- Prayer Form -->
+                <div class="max-w-md mx-auto space-y-4">
+                    <input type="text" id="devoteeName" placeholder="Tu nombre o 'Anónimo'..." class="w-full px-4 py-3 bg-sacred-deepwood rounded border border-sacred-gold/30 text-sacred-cream text-sm focus:outline-none focus:border-sacred-gold text-center font-newsreader">
+                    
+                    <textarea id="devoteePrayer" rows="2" placeholder="Escribe tu petición de salud, paz o descanso eterno..." class="w-full px-4 py-3 bg-sacred-deepwood rounded border border-sacred-gold/30 text-sacred-cream text-sm focus:outline-none focus:border-sacred-gold text-center font-newsreader"></textarea>
+
+                    <button onclick="lightVirtualCandle()" id="lightCandleBtn" class="gold-btn w-full py-3.5 rounded text-xs uppercase tracking-widest">
+                        Encender Vela y Elevar Petición
+                    </button>
+                </div>
+
+                <!-- Intention Roll List -->
+                <div class="mt-12 border-t border-sacred-gold/20 pt-8 text-left">
+                    <h4 class="font-cinzel text-sm text-sacred-gold font-bold mb-4 flex items-center justify-between">
+                        <span>Peticiones Presentes en el Altar</span>
+                        <span id="candleCount" class="text-xs font-newsreader text-sacred-mutedcream font-normal">3 Velas Ardiendo</span>
+                    </h4>
+
+                    <div id="prayerFeed" class="space-y-3 max-h-48 overflow-y-auto pr-2">
+                        <div class="p-3 bg-sacred-deepwood/80 rounded border border-sacred-gold/20 flex items-start justify-between">
+                            <div>
+                                <span class="font-cinzel text-xs text-sacred-gold block font-semibold">Elena P.</span>
+                                <p class="font-newsreader text-xs text-sacred-cream/80 italic">«Por la salud y paz de mi familia en tiempos difíciles.»</p>
+                            </div>
+                            <i class="fa-solid fa-fire text-amber-500 text-xs mt-1"></i>
+                        </div>
+
+                        <div class="p-3 bg-sacred-deepwood/80 rounded border border-sacred-gold/20 flex items-start justify-between">
+                            <div>
+                                <span class="font-cinzel text-xs text-sacred-gold block font-semibold">Mijaíl K.</span>
+                                <p class="font-newsreader text-xs text-sacred-cream/80 italic">«En memoria del siervo de Dios Vladimir.»</p>
+                            </div>
+                            <i class="fa-solid fa-fire text-amber-500 text-xs mt-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="panel-glass border-t border-sacred-gold/20 py-10 px-4 text-center">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sacred-cream/60 font-newsreader">
+            <div class="flex items-center space-x-2">
+                <svg class="w-5 h-6 text-sacred-gold" viewBox="0 0 100 120" fill="currentColor">
+                    <rect x="46" y="8" width="8" height="104"/>
+                    <rect x="22" y="24" width="56" height="7"/>
+                    <rect x="32" y="46" width="36" height="6"/>
+                    <line x1="26" y1="96" x2="74" y2="80" stroke="currentColor" stroke-width="7"/>
+                </svg>
+                <span class="font-cinzel text-sacred-gold font-semibold">Iglesia Ortodoxa Rusa — Mística, Teología e Iconografía</span>
+            </div>
+            <p>© Tradición Canónica y Espiritualidad Milenaria. Preservado para la Contemplación.</p>
+        </div>
+    </footer>
+
+    <!-- Web Audio & UI Logic Script -->
+    <script>
+
+
+
+
+
+ const boto = document.getElementById("miBoton");
+const audi = new Audio("https://media.azbyka.ru/audio/molitvoslov/dostojno-est.mp3");
+      audi.volume = 0.3;
+
+
+boto.addEventListener("click", () => {
+  if (audi.paused) {
+      audi.play();
+      boto.textContent = "Cántico Bajo Basso Profundo Pausar";
+    } else {
+      audi.pause();
+      boto.textContent = "Cántico Bajo Basso Profundo";
+    } // Reinicia el audio si se hace clic varias veces seguidas
+  
+});
+
+
+
+
+        let audioCtx = null;
+        let bassoOscillators = [];
+        let isBassoPlaying = false;
+
+        function getAudioContext() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            return audioCtx;
+        }
+
+        function stopAllAudio() {
+            bassoOscillators.forEach(osc => {
+                try { osc.stop(); } catch(e){}
+            });
+            bassoOscillators = [];
+            isBassoPlaying = false;
+
+            const playText = document.getElementById('heroPlayText');
+            if (playText) playText.innerText = 'Invocar Cántico';
+            const playIcon = document.getElementById('heroPlayIcon');
+            if (playIcon) playIcon.className = 'fa-solid fa-play';
+            const quickLabel = document.getElementById('quickAudioLabel');
+            if (quickLabel) quickLabel.innerText = 'Cántico Bajo Basso Profundo';
+        }
+
+        // Basso Profundo Vocal Synth (Sub-octave Oktavist Frequency)
+        function playBassoDrone() {
+            const ctx = getAudioContext();
+
+            if (isBassoPlaying) {
+                stopAllAudio();
+                return;
+            }
+
+            stopAllAudio();
+            isBassoPlaying = true;
+
+            document.getElementById('heroPlayText').innerText = 'Pausar Cántico';
+            document.getElementById('heroPlayIcon').className = 'fa-solid fa-pause';
+            document.getElementById('quickAudioLabel').innerText = 'Pausar Cántico Drone';
+
+            // Frequencies for a deep C2 (65.41 Hz) & G2 (98.00 Hz) sub-bass drone
+            const frequencies = [65.41, 98.00, 130.81, 196.00];
+
+            frequencies.forEach(freq => {
+                let osc = ctx.createOscillator();
+                let gain = ctx.createGain();
+
+                osc.type = 'sawtooth'; // Rich vocal-like overtone structure
+                osc.frequency.setValueAtTime(freq, ctx.currentTime);
+
+                // Lowpass filter to simulate deep throat vocal formant
+                let filter = ctx.createBiquadFilter();
+                filter.type = 'lowpass';
+                filter.frequency.value = 320;
+
+                gain.gain.setValueAtTime(0.001, ctx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.06, ctx.currentTime + 2.0);
+
+                osc.connect(filter);
+                filter.connect(gain);
+                gain.connect(ctx.destination);
+
+                osc.start();
+                bassoOscillators.push(osc);
+            });
+        }
+
+
+
+
+
+
+        function toggleGlobalAudio() {
+            playBassoDrone();
+        }
+
+        function ringZvonnitsaBell(type, freq) {
+            const ctx = getAudioContext();
+            
+            let osc = ctx.createOscillator();
+            let gain = ctx.createGain();
+
+            osc.type = freq < 200 ? 'triangle' : 'sine';
+            osc.frequency.setValueAtTime(freq, ctx.currentTime);
+
+            // Metallic harmonic overtones
+            let overtone = ctx.createOscillator();
+            let overtoneGain = ctx.createGain();
+            overtone.type = 'sine';
+            overtone.frequency.setValueAtTime(freq * 2.4, ctx.currentTime);
+
+            gain.gain.setValueAtTime(0.4, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + (freq < 200 ? 6.0 : 3.0));
+
+            overtoneGain.gain.setValueAtTime(0.15, ctx.currentTime);
+            overtoneGain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 2.5);
+
+            osc.connect(gain);
+            overtone.connect(overtoneGain);
+            gain.connect(ctx.destination);
+            overtoneGain.connect(ctx.destination);
+
+            osc.start();
+            overtone.start();
+
+            osc.stop(ctx.currentTime + 6.0);
+            overtone.stop(ctx.currentTime + 2.5);
+
+            document.getElementById('zvonnitsaStatus').innerText = `Sonando: ${type.toUpperCase()}`;
+        }
+
+        function triggerFestivePeal() {
+            const freqs = [1046, 523, 220, 87];
+            let delay = 0;
+
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    const selectedFreq = freqs[Math.floor(Math.random() * freqs.length)];
+                    ringZvonnitsaBell('Festivo', selectedFreq);
+                }, delay);
+                delay += 350 + Math.random() * 250;
+            }
+        }
+
+        const iconData = {
+            trinity: {
+                title: "La Santísima Trinidad",
+                sub: "San Andréi Rublev (c. 1411)",
+                desc: "Tres ángeles de idéntica figura sentados a la mesa eucarística formando un círculo perfecto. La inclinación de sus cabezas demuestra el diálogo eterno de amor e hipóstasis sin jerarquía.",
+                caliz: "En el centro de la mesa reposa la copa del sacrificio, símbolo del Cordero de Dios y pilar del Sacramento Eucarístico."
+            },
+            vladimir: {
+                title: "Virgen de Vladímir (Eleusa)",
+                sub: "Icono de la Tendencia Maternal",
+                desc: "Muestra a la Madre de Dios (Theotokos) con el Niño Jesús apoyando su mejilla junto a la de ella. El rostro de la Virgen refleja tristeza contemplativa anticipando la Pasión.",
+                caliz: "El túnica oscura de María contrasta con la vestidura dorada del Niño, manifestando la unión de la tierra con el Cielo."
+            },
+            pantocrator: {
+                title: "Cristo Pantocrátor",
+                sub: "Soberano del Universo",
+                desc: "Icono majestuoso que representa la doble naturaleza de Cristo: la mirada asimétrica evoca tanto la misericordia compasiva como la justicia del Juicio Final.",
+                caliz: "Con su mano derecha realiza el gesto de bendición trinitaria y con la izquierda sostiene el Libro de las Escrituras."
+            }
+        };
+
+        function selectIcon(key) {
+            const data = iconData[key];
+            if (!data) return;
+
+            document.getElementById('activeIconTitle').innerText = data.title;
+            document.getElementById('activeIconSub').innerText = data.sub;
+            document.getElementById('activeIconDesc').innerText = data.desc;
+            document.getElementById('activeIconCaliz').innerText = data.caliz;
+
+            // Highlight selected card
+            ['trinity', 'vladimir', 'pantocrator'].forEach(k => {
+                const card = document.getElementById(`card-${k}`);
+                if (k === key) {
+                    card.className = 'panel-glass p-4 rounded-lg gold-border-glow cursor-pointer transition-all flex items-center space-x-4 border-l-4 border-l-sacred-gold';
+                } else {
+                    card.className = 'panel-glass p-4 rounded-lg gold-border-antique cursor-pointer transition-all flex items-center space-x-4 hover:border-sacred-gold';
+                }
+            });
+        }
+
+        let totalCandles = 3;
+
+        function lightVirtualCandle() {
+            const nameInput = document.getElementById('devoteeName').value.trim() || 'Anónimo';
+            const prayerInput = document.getElementById('devoteePrayer').value.trim() || 'Por paz espiritual y protección.';
+
+            // Light flame animation
+            const flame = document.getElementById('flameElement');
+            flame.classList.remove('opacity-0');
+
+            // Ring subtle bell sound
+            ringZvonnitsaBell('zvin', 1046);
+
+            // Add new prayer entry to feed
+            const feed = document.getElementById('prayerFeed');
+            const newPrayer = document.createElement('div');
+            newPrayer.className = 'p-3 bg-sacred-deepwood/80 rounded border border-sacred-gold/30 flex items-start justify-between animate-fade-in';
+            newPrayer.innerHTML = `
+                <div>
+                    <span class="font-cinzel text-xs text-sacred-gold block font-semibold">${escapeHtml(nameInput)}</span>
+                    <p class="font-newsreader text-xs text-sacred-cream/80 italic">«${escapeHtml(prayerInput)}»</p>
+                </div>
+                <i class="fa-solid fa-fire text-amber-500 text-xs mt-1"></i>
+            `;
+
+            feed.prepend(newPrayer);
+
+            totalCandles++;
+            document.getElementById('candleCount').innerText = `${totalCandles} Velas Ardiendo`;
+
+            // Clear inputs
+            document.getElementById('devoteePrayer').value = '';
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/[&<>"']/g, function(m) {
+                return {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#039;'
+                }[m];
+            });
+        }
+    </script>
+</body>
+</html>
